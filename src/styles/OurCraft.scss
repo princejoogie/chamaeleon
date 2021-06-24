@@ -1,0 +1,64 @@
+.ourCraft__tpr {
+  color: blueviolet;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ourCraft__apps {
+  width: 90%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  grid-column-gap: 50px;
+}
+
+.ourCraft__appItem {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.6;
+  }
+
+  p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  a {
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.ourCraft__button {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .ourCraft__apps {
+    grid-template-columns: 12fr;
+    grid-column-gap: 0px;
+  }
+
+  .ourCraft__appItem {
+    img {
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.navbar.onScroll {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  align-items: center;
+}
+
+.navbar__all {
+  display: flex;
+  height: 100%;
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+}
+
+.navbar__logo {
+  z-index: 5;
+
+  img {
+    height: 10vh;
+    transition: all 0.3s;
+  }
+}
+
+.navbar__link {
+  color: #212529;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 50px;
+  line-height: 22px;
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+
+.navbar__selected {
+  color: #1e90ff;
+  font-weight: bold;
+  border-bottom: 1px solid #1e90ff;
+  padding-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__all {
+    justify-content: space-between;
+  }
+
+  .navbar__line {
+    width: 30px;
+    height: 3px;
+    background: #212529;
+    margin: 5px;
+    transition: all 0.3s;
+  }
+
+  .navbar__hamburger {
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .navbar__hamburger.open {
+    .navbar__line:nth-child(1) {
+      transform: rotate(45deg) translateY(5px);
+    }
+    .navbar__line:nth-child(2) {
+      display: none;
+    }
+    .navbar__line:nth-child(3) {
+      transform: rotate(-45deg) translateY(-5px) translateX(1px);
+    }
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    flex-direction: column;
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+    justify-content: center;
+    display: none;
+  }
+
+  .navbar__link {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .navbar__links.open {
+    display: flex;
+    pointer-events: all;
+  }
+
+  .navbar__logo {
+    img {
+      height: 7vh;
+    }
+  }
+}
